@@ -1,0 +1,16 @@
+{
+  "docs/screenshots/desktop.jpg": {
+    "sha256": "5d7493b8c08eb1e0c1e356fc78e61876195fd6630f954a390cfa99b3550d8a7e",
+    "width": 1280,
+    "height": 800,
+    "route": "/work",
+    "content": "Fictional public demo; visually reviewed"
+  },
+  "docs/screenshots/pocket.jpg": {
+    "sha256": "1062cfcbaf2803be28151799aff5079ad2c0b424d253584a09c4ffb36dd16a97",
+    "width": 390,
+    "height": 844,
+    "route": "/work",
+    "content": "Fictional public demo; visually reviewed"
+  }
+}

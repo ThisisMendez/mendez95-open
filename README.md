@@ -4,7 +4,17 @@ The public source edition of **Mendez 95**, an interactive portfolio built aroun
 
 Explore how the windows, navigation, content system, games, editor, and guide fit together, then fork the project to build your own version. This edition runs with fictional content and original geometric sample artwork. **You do not need access to the private project or its services.**
 
-[Fork and run](#fork-and-run) · [How it is built](#how-it-is-built) · [Make it yours](#make-it-yours) · [Documentation](#documentation)
+[Use this template](https://github.com/ThisisMendez/mendez95-open/generate) · [Fork and run](#fork-and-run) · [Build your own version](docs/CUSTOMIZATION.md) · [Architecture and code tour](docs/ARCHITECTURE.md)
+
+## Desktop and Pocket previews
+
+Both captures show the same fictional sample portfolio at `/work`. Names, organizations and case narratives are invented; the images contain no original personal photos or browser chrome.
+
+| Desktop · 1280 × 800 | Pocket · 390 × 844 |
+| --- | --- |
+| <img src="docs/screenshots/desktop.jpg" alt="Desktop sample portfolio in a window, with app launchers and widgets" width="720" /> | <img src="docs/screenshots/pocket.jpg" alt="Pocket sample portfolio with category filters, case cards and bottom navigation" width="220" /> |
+
+The desktop's visitor display is labeled illustrative. Clock, weather and service availability can differ when you run the starter. [Capture details and reviewed hashes](docs/screenshots/README.md).
 
 ## What you can explore
 
@@ -40,7 +50,7 @@ See [architecture and decisions](docs/ARCHITECTURE.md) for a closer look.
 
 **Requirements:** Git, Node.js 24, and npm. The basic local demo needs no API keys, cloud account, or private-repository access.
 
-1. Use **Fork** on this repository to create your own copy.
+1. Choose **[Use this template](https://github.com/ThisisMendez/mendez95-open/generate)** for an independent project with fresh history, or **[Fork](https://github.com/ThisisMendez/mendez95-open/fork)** to retain an upstream relationship.
 2. Clone your fork, replacing `YOUR-USERNAME` below. If you rename the repository, adjust the clone URL and directory name too.
 
 ```sh
@@ -70,6 +80,8 @@ Open **http://127.0.0.1:5173/editor** and sign in with the generated password st
 | Your own videos | Add reviewed assets under `public/videos/` and configure [`VideoPreview.tsx`](src/components/VideoPreview.tsx) |
 
 Keep record IDs stable when editing existing content. Publication requires explicit status, clearance, and source references; the supplied records show the expected shape. Field Notes currently expect Medium article URLs, and gallery photos expect individual Instagram post or reel links. The [customization guide](docs/CUSTOMIZATION.md) explains these constraints and where to change them.
+
+For a worked example, follow **[Build your own version](docs/CUSTOMIZATION.md)**. It includes a complete fictional case and a helper that adds it to your own copy without replacing existing records.
 
 Anything committed to your public fork is public. Keep private content and credentials outside Git. The server supports `MENDEZ_OS_CONTENT_DIR`, `MENDEZ_OS_MEDIA_DIR`, and `MENDEZ_OS_DATA_DIR` for separate local storage. `.env.example` documents example settings; the app does **not** automatically load `.env` files.
 

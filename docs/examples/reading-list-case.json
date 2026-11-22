@@ -1,0 +1,17 @@
+{
+  "id": "example-reading-list",
+  "slug": "example-reading-list",
+  "title": "A Reading List That Stays Useful",
+  "kind": "case-study",
+  "context": "Sample Workshop · Fictional tutorial",
+  "summary": "A fictional experiment in making saved articles easier to revisit.",
+  "role": "Example product builder",
+  "status": "published",
+  "disclosureStatus": "cleared",
+  "sourceRefs": ["Fictional case authored for the public customization tutorial."],
+  "featured": false,
+  "displayOrder": 20,
+  "tags": ["tutorial", "product", "fictional"],
+  "relatedIds": [],
+  "articleMarkdown": "# A Reading List That Stays Useful\n\n## The problem\nThis fictional project asks how a saved article can be easier to find again.\n\n## The decision\nKeep a small list with a short note explaining why each article matters.\n\n## Verification\nTry the workflow with invented records, check direct navigation, and document what should be tested next. No real users or measured business results are claimed."
+}
