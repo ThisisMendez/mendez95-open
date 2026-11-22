@@ -45,3 +45,5 @@ The Worker configuration is local-only. There are no production routes, mail bin
 This repository is published automatically from a separately maintained private project. You can edit your own fork normally. Direct edits to this repository's generated files may be replaced by the next export; discuss proposed upstream changes in an issue. Public commits describe the exported edition and do not reproduce private commit messages or authors.
 
 MIT licensed. See LICENSE and THIRD-PARTY-NOTICES.md.
+
+Temporary automatic-publishing verification: `PUBLIC_SYNC_TEST_0bc268703b8d4fffa9509db862597830`.
