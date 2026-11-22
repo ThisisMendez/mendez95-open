@@ -1,0 +1,34 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS schema_info(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL);
+INSERT OR IGNORE INTO schema_info VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'));
+CREATE TABLE content(collection TEXT PRIMARY KEY,json TEXT NOT NULL CHECK(length(CAST(json AS BLOB))<1900000),version INTEGER NOT NULL DEFAULT 1,updated_at TEXT NOT NULL);
+CREATE TABLE revisions(id TEXT PRIMARY KEY,collection TEXT NOT NULL,json TEXT NOT NULL,saved_at TEXT NOT NULL);
+CREATE INDEX revisions_collection ON revisions(collection,saved_at DESC);
+CREATE TABLE redirects(path TEXT PRIMARY KEY,target TEXT NOT NULL);
+CREATE TABLE publication(id TEXT PRIMARY KEY,source_hash TEXT NOT NULL,approved_at TEXT NOT NULL,scope TEXT NOT NULL);
+CREATE TABLE media(path TEXT PRIMARY KEY,mime TEXT NOT NULL,size INTEGER NOT NULL CHECK(size<=5000000),sha256 TEXT NOT NULL,chunks INTEGER NOT NULL,ready INTEGER NOT NULL DEFAULT 0,created_at INTEGER NOT NULL,owner TEXT);
+CREATE TABLE media_chunks(path TEXT NOT NULL REFERENCES media(path) ON DELETE CASCADE,part INTEGER NOT NULL,bytes BLOB NOT NULL CHECK(length(bytes)<=262144),PRIMARY KEY(path,part));
+CREATE TABLE notes(id TEXT PRIMARY KEY,status TEXT NOT NULL,origin TEXT NOT NULL CHECK(origin IN ('actual','sample')),x INTEGER NOT NULL,y INTEGER NOT NULL,created_at TEXT NOT NULL,json TEXT NOT NULL,owner_hash TEXT);
+CREATE INDEX notes_public ON notes(status,created_at);
+CREATE TABLE reports(id TEXT PRIMARY KEY,note_id TEXT NOT NULL REFERENCES notes(id),created_at TEXT NOT NULL,visitor_hash TEXT,UNIQUE(note_id,visitor_hash));
+CREATE TABLE rounds(token_hash TEXT PRIMARY KEY,game TEXT NOT NULL,difficulty TEXT NOT NULL DEFAULT '',visitor_hash TEXT NOT NULL,started_at INTEGER NOT NULL,expires_at INTEGER NOT NULL,completed_duration INTEGER,consumed INTEGER NOT NULL DEFAULT 0);
+CREATE INDEX rounds_expiry ON rounds(expires_at);
+CREATE TABLE scores(id TEXT PRIMARY KEY,round_hash TEXT UNIQUE,game TEXT NOT NULL,difficulty TEXT NOT NULL DEFAULT '',nickname_key TEXT NOT NULL,score INTEGER NOT NULL,created_at TEXT NOT NULL,origin TEXT NOT NULL CHECK(origin IN ('actual','sample')),json TEXT NOT NULL);
+CREATE INDEX scores_ranking ON scores(game,difficulty,origin,score,created_at);
+CREATE TABLE requests(id TEXT PRIMARY KEY,created_at TEXT NOT NULL,status TEXT NOT NULL,notification TEXT NOT NULL,json TEXT NOT NULL);
+CREATE TABLE notifications(id TEXT PRIMARY KEY,request_id TEXT NOT NULL,created_at TEXT NOT NULL,state TEXT NOT NULL,attempt INTEGER NOT NULL DEFAULT 0,provider_id TEXT);
+CREATE TABLE sessions(token_hash TEXT PRIMARY KEY,csrf_hash TEXT NOT NULL,subject TEXT NOT NULL,created_at INTEGER NOT NULL,expires_at INTEGER NOT NULL,epoch TEXT NOT NULL,revoked INTEGER NOT NULL DEFAULT 0);
+CREATE INDEX sessions_expiry ON sessions(expires_at);
+CREATE TABLE settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE visits(day_hash TEXT PRIMARY KEY,day TEXT,country TEXT NOT NULL,city TEXT,recorded_at TEXT,json TEXT NOT NULL);
+CREATE INDEX visits_day ON visits(day,country);
+CREATE TABLE quotas(key TEXT PRIMARY KEY,count INTEGER NOT NULL,expires_at INTEGER NOT NULL);
+CREATE INDEX quotas_expiry ON quotas(expires_at);
+CREATE TABLE cache(key TEXT PRIMARY KEY,json TEXT NOT NULL,expires_at INTEGER NOT NULL,lease_until INTEGER NOT NULL DEFAULT 0);
+CREATE INDEX cache_expiry ON cache(expires_at);
+CREATE TRIGGER content_revision BEFORE UPDATE OF json ON content BEGIN
+ INSERT INTO revisions(id,collection,json,saved_at) VALUES(old.collection||'.json.'||old.version||'.bak',old.collection,old.json,strftime('%Y-%m-%dT%H:%M:%fZ','now'));
+END;
+CREATE TRIGGER media_ready BEFORE UPDATE OF ready ON media WHEN new.ready=1 BEGIN
+ SELECT CASE WHEN (SELECT COUNT(*) FROM media_chunks WHERE path=new.path)!=new.chunks OR (SELECT COALESCE(SUM(length(bytes)),0) FROM media_chunks WHERE path=new.path)!=new.size THEN RAISE(ABORT,'Incomplete media') END;
+END;

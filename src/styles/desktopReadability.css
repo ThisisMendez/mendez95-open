@@ -1,0 +1,20 @@
+/* Desktop-only interface sizing. Body/reader/Pocket type stays owned by its app. */
+@media screen and (min-width:768px){
+ .os-desktop{--desktop-menu-height:47px;--desktop-task-height:44px;--desktop-title-height:36.3px;--desktop-menu-font:13.024px;--desktop-task-font:12.672px;--desktop-title-font:12.848px;--desktop-menu-item-font:12.848px;--desktop-start-font:13.728px;--desktop-start-width:316.8px;--desktop-start-row:43px;--desktop-icon-font:12.496px;--desktop-close-width:28px;--desktop-close-height:26.4px;--desktop-control-font:14.08px}
+ .os-desktop .os-start-submenu{width:238px;max-height:calc(100dvh - 108px);overflow:auto}
+ .os-desktop .os-start-side{width:35px;font-size:17.6px}
+ .os-desktop .os-menu-popover{max-height:calc(100dvh - 100px);overflow:auto}
+ .os-desktop .os-window-layer .os-window{max-height:calc(100% - 28px - var(--os-window-offset,0px))}
+ .os-desktop .os-wallpaper-center{width:min(100%,422.4px,calc((100dvh - 242px) * .61976))}
+ .os-desktop .os-icon-art{width:46px;height:46px}.os-desktop .os-icon-art svg{width:32px;height:32px}
+ .os-desktop .os-preview-indicator{font-size:10.736px}
+ .os-desktop .os-segmented button{font-size:12.32px;min-height:35px}
+ .os-desktop :is(.os-settings,.os-system-app) :is(button,input,select){font-size:var(--desktop-control-font)}
+ .os-desktop .os-settings :is(p,small,label){font-size:14.3px}
+ .os-desktop .os-folder-item strong{font-size:15.488px}
+ .os-desktop :is(.os-folder-number,.os-folder-org,.os-folder-year){font-size:11.968px}
+ .os-desktop .os-widget-column{overflow:auto;padding-bottom:8px}
+ .os-desktop .os-widget-title{font-size:13.376px}.os-desktop .os-widget-body{font-size:13.728px}.os-desktop .os-widget-body small{font-size:12.32px}.os-desktop .os-widget-body button{font-size:12.32px}
+}
+
+@media screen and (min-width:768px) and (max-width:800px){.os-desktop .os-widgets{grid-template-columns:minmax(0,1fr);grid-template-areas:"weather" "clock" "music" "x" "map" "visitors"}}

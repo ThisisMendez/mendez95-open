@@ -1,0 +1,57 @@
+.pocket-settings{color:var(--pocket-ink,#132544)}
+.pocket-settings>p{font-size:.85rem}
+.pocket-settings .pocket-settings-panel{border:1px solid currentColor;border-radius:5px;margin:14px 0;overflow:hidden;background:var(--pocket-paper,#f8f4e7)}
+.pocket-settings .pocket-settings-panel>h2{font-size:1rem;margin:0;padding:9px 12px;background:var(--pocket-teal,#48c9bb);border-bottom:1px solid currentColor}
+.pocket-theme-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:12px 8px}
+.pocket-theme-tile{border:2px solid transparent;background:transparent;border-radius:6px;padding:5px 3px;color:inherit;min-width:0}
+.pocket-theme-tile[aria-pressed=true]{border-color:var(--pocket-coral,#b42f48)}
+.pocket-theme-tile strong{display:block;font:700 .7rem/1.3 Tahoma,sans-serif;margin-top:7px}
+.pocket-theme-console{display:block;border:3px solid #18253c;border-radius:4px 4px 12px 4px;margin:auto;width:66px;height:86px;padding:11px 5px;background:#b0b89b;box-shadow:inset 4px 0 #ffffff60,2px 3px #18253c}
+.pocket-theme-console>span{display:grid;place-items:center;width:100%;height:40px;border:5px solid #26384a;background:#a4b77d;color:#233e23;font:bold 18px monospace}
+.theme-teal .pocket-theme-console{background:#22b9b0}
+.theme-teal .pocket-theme-console>span{background:#e9f1ba}
+.theme-midnight .pocket-theme-console{background:#303b69}
+.theme-midnight .pocket-theme-console>span{background:#2c233c;color:#bc9bf6}
+.pocket-settings .pocket-settings-panel .os-settings-row{display:flex;align-items:center;gap:12px;padding:8px 12px;flex-wrap:nowrap;border-bottom:1px solid #65748455;margin:0}
+.pocket-settings .pocket-settings-panel .os-settings-row:last-child{border-bottom:0}
+.pocket-settings .pocket-settings-panel .os-settings-row>div{flex:1}
+.pocket-settings .pocket-settings-panel .os-settings-row h2{font:700 .85rem/1.3 Tahoma,sans-serif;margin:0}
+.pocket-settings .pocket-settings-panel .os-settings-row p{font-size:.7rem;line-height:1.4;margin:4px 0 0}
+.pocket-settings [role=switch]{font-size:0;position:relative;border:1px solid currentColor;box-shadow:none;width:43px;min-width:43px;height:44px;min-height:44px;border-radius:0;background:transparent;padding:0;border:0}
+.pocket-settings [role=switch]:after{content:'';display:block;position:absolute;left:3px;top:12px;border:1px solid #455661;border-radius:50%;width:19px;height:19px;background:#fff}
+.pocket-settings [role=switch][aria-checked=true]{background:transparent}
+.pocket-settings [role=switch][aria-checked=true]:after{left:21px}
+.pocket-system-actions{display:flex;flex-direction:column}
+.pocket-system-actions button{display:flex;justify-content:space-between;gap:10px;align-items:center;background:transparent;color:inherit;border:0;border-bottom:1px solid #65748455;padding:11px 12px;text-align:left;font-weight:bold;min-height:44px}
+.pocket-system-actions button:last-child{border-bottom:0}
+.pocket-system-actions span{font-size:22px}
+.pocket-settings-advanced{padding:12px}
+.pocket-settings-advanced summary{cursor:pointer;font-weight:bold}
+.pocket-settings-advanced[open] summary{margin-bottom:16px}
+.pocket-settings-advanced .os-settings-select{display:flex;flex-direction:column;align-items:stretch;gap:7px;margin-bottom:16px}
+.pocket-settings-advanced select,.pocket-settings-advanced input{min-width:0;width:100%;max-width:100%}
+.pocket-settings-advanced small{display:block}
+.pocket-settings-advanced fieldset{border:1px solid #65748455;margin:10px 0;padding:10px;min-width:0}
+.pocket-settings-advanced .os-actions{flex-wrap:wrap}
+.pocket-settings-advanced>p{font-size:.72rem;line-height:1.5}
+.pocket-settings button:focus-visible,.pocket-settings summary:focus-visible{outline:3px solid var(--pocket-coral,#b42f48);outline-offset:-3px}
+@media(prefers-reduced-motion:reduce){.pocket-settings *{transition:none!important}
+}
+
+
+/* The visual track sits inside a 44px switch target. */
+.pocket-settings [role=switch]:before{content:"";position:absolute;left:0;top:9px;width:43px;height:25px;border:1px solid #455661;border-radius:15px;background:#c2c8c7}
+
+.pocket-settings [role=switch][aria-checked=true]:before{background:#18aa9e}
+
+/* Device Shelf: recognizable handhelds, using the existing persisted theme. */
+.pocket-theme-choices{gap:9px;padding:18px 10px}
+.pocket-theme-tile{padding:9px 3px 11px;border:2px solid var(--pocket-line,#17384a);background:#e2e8d8;border-radius:8px;box-shadow:inset 2px 2px #fff9,2px 3px #17384a44;color:#142f3d}
+.pocket-theme-tile[aria-pressed=true]{border-color:#17384a;outline:3px solid #d54183;outline-offset:1px}
+.pocket-theme-console{position:relative;max-width:100%;width:67px;height:108px;margin:auto;padding:11px 5px;background:#b2c372;border-color:#53633d;border-radius:6px 6px 15px 6px;box-shadow:inset 2px 2px #fff9,inset -3px -3px #142c3b44}
+.pocket-theme-console>span{height:43px;border:5px solid #3d5a59;background:#94ac59;font-size:14px}
+.pocket-device-cross{position:absolute;left:6px;bottom:13px;font:700 22px monospace;color:#455f3b}
+.pocket-device-ab{position:absolute;right:2px;bottom:18px;font:700 12px monospace;transform:rotate(-22deg);color:#455f3b;letter-spacing:0}
+.theme-teal .pocket-theme-console{background:#b38af2;border-color:#433466}.theme-teal .pocket-theme-console>span{background:linear-gradient(165deg,#2cc5b2 0 40%,#f9b974 41% 65%,#728ee4 66%)}.theme-teal .pocket-device-cross,.theme-teal .pocket-device-ab{color:#a62973}
+.theme-midnight .pocket-theme-console{background:#19333e;border-color:#081c2a}.theme-midnight .pocket-theme-console>span{background:linear-gradient(145deg,#577164,#173b51);color:#e7f2c1}.theme-midnight .pocket-device-cross,.theme-midnight .pocket-device-ab{color:#53bbaf}
+@media(max-width:350px){.pocket-theme-choices{gap:6px;padding-inline:7px}.pocket-theme-console{width:58px;height:98px}.pocket-theme-console>span{height:36px}.pocket-device-cross{font-size:19px}.pocket-device-ab{font-size:10px}}

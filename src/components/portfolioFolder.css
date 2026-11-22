@@ -1,0 +1,35 @@
+/* Shared catalog presentation; shell mode state owns window geometry. */
+:is(.os-portfolio-folder,.os-side-project-folder).os-folder{container-type:inline-size;min-height:0;flex:1 1 auto;gap:0;padding:0}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-toolbar{flex:none;padding:10px 12px;gap:12px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-switches{gap:10px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items{min-height:0;overflow:auto;overscroll-behavior:contain;padding-bottom:8px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items.is-list .os-folder-item{grid-template-columns:40px 24px minmax(0,280px) minmax(130px,170px) 92px;gap:10px;min-height:64px;padding:9px 12px;align-items:center;border-inline-start:3px solid transparent}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-item strong{line-height:1.3;overflow-wrap:break-word}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items.is-list .os-folder-item>img{width:40px;height:40px;object-fit:contain}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-org{text-align:left;line-height:1.35;overflow-wrap:break-word}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-year{white-space:nowrap;text-align:right}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-featured-label{display:inline-block;font-size:.65rem;margin:0;line-height:1.2;white-space:nowrap}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items.is-icons{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;padding:12px}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-item{min-height:130px;padding:10px 6px;gap:6px;justify-content:start}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-item img{width:48px;height:48px}
+@container(max-width:650px){
+  :is(.os-portfolio-folder,.os-side-project-folder) .os-folder-toolbar{flex-wrap:wrap;padding:10px;gap:8px}
+  :is(.os-portfolio-folder,.os-side-project-folder) .os-segmented button{min-height:44px}
+  :is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items.is-list .os-folder-item{grid-template-columns:40px 24px minmax(0,1fr) auto;gap:4px 8px;padding:10px;min-height:72px}
+  :is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-item>img,:is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-item>svg{grid-column:1;grid-row:1 / span 2}
+  :is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-number{grid-column:2;grid-row:1 / span 2}
+  :is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-item>.os-folder-title{grid-column:3 / -1;grid-row:1}
+  :is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-org{display:block;grid-column:3;grid-row:2;text-align:left}
+  :is(.os-portfolio-folder,.os-side-project-folder) .is-list .os-folder-year{grid-column:4;grid-row:2;font-size:.68rem}
+}
+/* Case hierarchy: a modest featured accent, not a selected-row state. */
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-items.is-list .os-folder-item.is-featured{border-inline-start-color:var(--os-accent);background:color-mix(in srgb,var(--os-accent) 8%,transparent);min-height:76px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-title{min-width:0}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-title-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 8px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-subject{display:block;font-size:.7rem;line-height:1.3;color:var(--os-muted);margin-top:2px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-secondary{display:block;font-size:.75rem;line-height:1.35;color:var(--os-muted);margin-top:3px}
+:is(.os-portfolio-folder,.os-side-project-folder) .os-folder-item img{image-rendering:pixelated}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-title-line{justify-content:center}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-subject{margin-top:2px;font-size:.68rem}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-secondary{display:none}
+:is(.os-portfolio-folder,.os-side-project-folder) .is-icons .os-folder-item img.os-folder-primary-preview{width:132px;height:88px;object-fit:contain;image-rendering:auto}

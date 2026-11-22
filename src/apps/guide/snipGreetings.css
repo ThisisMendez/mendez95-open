@@ -1,0 +1,12 @@
+.snip-greeting{position:fixed;z-index:65;left:12px;bottom:50px;width:315px;display:grid;grid-template-columns:1fr 24px;gap:8px;padding:8px;border:2px solid #172238;border-color:#fff #172238 #172238 #fff;background:#f5f3e8;color:#172238;box-shadow:3px 3px #17223844;font:12px/1.4 Arial}.snip-greeting img{width:45px;height:68px;object-fit:contain}.snip-greeting p{margin:5px 0}.snip-greeting button{background:none;color:#174e55;border:0;text-decoration:underline;font-size:11px;cursor:pointer}.snip-greeting>button{font-size:20px;padding:0;align-self:start}.snip-greeting strong{font-size:12px}
+@media(max-width:767px){.snip-greeting{top:calc(var(--pocket-header-height) + var(--pocket-breadcrumb-height));bottom:auto;left:11px;right:11px;width:auto;max-height:145px;overflow:auto;box-shadow:none}}
+@media print{.snip-greeting{display:none!important}}
+@media(max-width:767px){.snip-greeting{grid-template-columns:40px minmax(0,1fr) 44px;gap:5px}.snip-greeting>button{min-width:44px;min-height:44px}.snip-greeting div>button{min-height:44px;padding:5px 0}}
+
+/* The prepared bubble follows the actual movable launcher. Pocket has no tips. */
+.snip-greeting{box-sizing:border-box;max-width:calc(100vw - 16px);bottom:auto}
+.snip-greeting:after{content:"";position:absolute;top:50%;width:10px;height:10px;background:#f5f3e8;transform:rotate(45deg)}
+.snip-greeting[data-side=left]:after{right:-7px;border-top:2px solid #172238;border-right:2px solid #172238}
+.snip-greeting[data-side=right]:after{left:-7px;border-bottom:2px solid #172238;border-left:2px solid #172238}
+.snip-greeting[data-side=above]:after{top:auto;bottom:-7px;left:50%;border-bottom:2px solid #172238;border-right:2px solid #172238}
+@media(max-width:767px){.snip-greeting{display:none}}

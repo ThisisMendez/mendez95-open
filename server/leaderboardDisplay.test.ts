@@ -1,0 +1,7 @@
+import {describe,it,expect} from 'vitest';
+import {leaderboardDisplay} from './leaderboardDisplay';
+import {sampleScores} from './sampleData';
+describe('ordinary demo-filled leaderboard',()=>{
+ it('shows ten stable unique clean rows per game/difficulty without writing actual results',()=>{for(const game of ['snake','bounce','solitaire','minesweeper'] as const){for(const difficulty of game==='minesweeper'?['beginner','intermediate','expert'] as const:[undefined]){const demos=sampleScores(game,difficulty);const rows=leaderboardDisplay([],demos,game==='minesweeper');expect(rows).toHaveLength(10);expect(new Set(rows.map(r=>r.nickname.toLowerCase())).size).toBe(10);expect(rows.every(r=>r.sample)).toBe(true);expect(leaderboardDisplay([],sampleScores(game,difficulty),game==='minesweeper')).toEqual(rows);}}});
+ it('retains real best results even when demos are stronger, omits same-name demos and keeps correct ranking',()=>{const real=[{id:'actual',nickname:' aVERY ',score:10,createdAt:'2026-10-29'}],bytes=JSON.stringify(real);const rows=leaderboardDisplay(real,sampleScores('snake'),false);expect(rows).toHaveLength(10);expect(rows.some(r=>r.id==='actual')).toBe(true);expect(rows.filter(r=>r.nickname.trim().toLowerCase()==='avery')).toHaveLength(1);expect(JSON.stringify(real)).toBe(bytes);expect(rows.every((r,i)=>!i||rows[i-1]!.score>=r.score)).toBe(true);const mines=leaderboardDisplay([{...real[0]!,score:300}],sampleScores('minesweeper','beginner'),true);expect(mines.every((r,i)=>!i||mines[i-1]!.score<=r.score)).toBe(true);});
+});

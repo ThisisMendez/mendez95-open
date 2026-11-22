@@ -1,0 +1,122 @@
+.classic-game { padding: 10px; color: var(--os-text, var(--text, #202c30)); font: 12px/1.35 var(--os-font, sans-serif); }
+.classic-game * { box-sizing: border-box; }
+.classic-game button, .classic-game select, .classic-game input { font: inherit; color: var(--os-text, var(--text, #202c30)); background: var(--os-raised, #dfdfd5); border: 1px solid var(--os-border, var(--border, #748487)); border-radius: 2px; padding: 4px 7px; }
+.classic-game button { cursor: pointer; }
+.classic-game button:disabled { cursor: default; opacity: .55; }
+.classic-game :focus-visible { outline: 3px solid var(--focus, #eb9e00); outline-offset: 2px; z-index: 2; }
+.classic-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-variant-numeric: tabular-nums; }
+.classic-head h2 { margin: 0; font-size: 18px; }
+.classic-head b { font-size: 15px; }
+.classic-help { margin: 5px 0 8px; font-size: 11px; }
+.classic-layout { display: grid; grid-template-columns: minmax(0, 1fr) 174px; align-items: start; gap: 12px; }
+.classic-play { min-width: 0; margin: 0; }
+.classic-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin: 7px 0; }
+.classic-actions button { min-height: 29px; }
+.classic-status { margin: 6px 0; min-height: 17px; }
+.classic-selection { margin: 4px 0; }
+.classic-selection button { font-size: 10px; padding: 2px 5px; }
+.classic-rules { font-size: 11px; margin: 5px 0; }
+.classic-rules summary { cursor: pointer; }
+.classic-rules p { margin: 6px 0; }
+.classic-result { background: var(--os-raised, #d8e6da); border: 1px solid var(--os-border, var(--border, #748487)); padding: 8px; margin: 8px 0; }
+.classic-result strong, .classic-result label { display: block; }
+.classic-result label { margin-top: 6px; font-size: 11px; }
+.classic-result form > div { display: flex; gap: 5px; max-width: 370px; }
+.classic-result input { width: 100%; min-width: 0; }
+.classic-result button { white-space: nowrap; }
+.classic-game .m-game-leaderboard { min-width: 0; border-left: 1px solid var(--os-border, var(--border, #748487)); padding-left: 10px; font-size: 11px; }
+.classic-game .m-game-leaderboard-head { display: flex; justify-content: space-between; align-items: center; gap: 4px; }
+.classic-game .m-game-leaderboard h3 { font-size: 13px; margin: 0; }
+.classic-game .m-game-leaderboard ol { padding-left: 22px; margin: 6px 0; }
+.classic-game .m-game-leaderboard li { padding: 5px 0; border-bottom: 1px dotted var(--os-border, var(--border, #748487)); }
+.classic-game .m-game-leaderboard li span { max-width: 100px; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+.classic-game .m-game-leaderboard li strong { float: right; font-variant-numeric: tabular-nums; }
+.classic-game .m-game-leaderboard p, .classic-game .m-game-leaderboard small { color: inherit; }
+.classic-game .m-game-count { margin: 5px 0; font-size: 10px; }
+.solitaire-table { --card-height: 72px; padding: 9px; background: #155d48; color: #fff; border: 2px inset #b6c1ba; overflow-x: auto; }
+.solitaire-top, .solitaire-columns { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; min-width: 290px; }
+.solitaire-top { margin-bottom: 7px; }
+.classic-game .sol-card { height: var(--card-height); min-width: 0; width: 100%; padding: 3px 4px; text-align: left; vertical-align: top; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; color: #15262a; background: #fffdf3; border: 1px solid #b6b4a5; border-radius: 4px; font: bold 17px/1.05 Georgia, serif; box-shadow: 0 1px 1px #082e26; touch-action: manipulation; }
+.classic-game .sol-card.red { color: #aa1730; }
+.classic-game .sol-card:disabled { opacity: 1; }
+.classic-game .sol-card.sol-slot { background: #12523f; color: #c9e4d4; border: 1px dashed #73a18a; justify-content: center; align-items: center; font-size: 21px; }
+.classic-game .sol-card.sol-back { background: repeating-linear-gradient(45deg, #233f69 0 4px, #3b5d8b 4px 6px); color: #e5eaf2; border: 2px solid #e1e4da; align-items: center; justify-content: center; font-size: 19px; }
+.classic-game .sol-card.selected { outline: 3px solid #ffe465; outline-offset: -3px; background-color: #fff3b5; }
+.classic-game .sol-stock small { font: 10px/1 sans-serif; padding-top: 4px; }
+.sol-column { position: relative; min-height: 110px; }
+.sol-column .sol-card { position: absolute; left: 0; }
+.classic-game .sol-column-label { position: absolute; top: 0; width: 100%; height: 20px; border: 0; color: #fff; background: transparent; padding: 0; font-size: 11px; }
+.classic-game .sol-column-label:disabled { opacity: .7; }
+.mines-options { margin-top: 0; }
+.mines-options label { display: flex; gap: 5px; align-items: center; }
+.mines-options button.active { background: #f1d76b; color: #25313a; }
+.mine-scroll { width:max-content; max-width: 100%; max-height: max(240px, calc(100dvh - 300px)); overflow: auto; padding: 3px; background: #9b9b91; border: 2px inset #e2e0d6; }
+.mine-grid { --mine-size: 30px; width: max-content; min-width: 0; color: #142638; background: #bfc4bd; }
+.mine-row { display: grid; grid-template-columns: repeat(var(--mine-cols), var(--mine-size)); }
+.classic-mines-intermediate .mine-grid { --mine-size: min(24px, max(18px, calc((100dvh - 260px) / 16))); }
+.classic-mines-expert .mine-grid { --mine-size: min(22px, max(18px, calc((100dvh - 260px) / 16))); }
+.classic-game .mine-cell { width: var(--mine-size); height: var(--mine-size); padding: 0; border: 2px outset #f4f3e8; border-radius: 0; background: #c9ccc3; color: #17366a; font: bold 15px/1 monospace; touch-action: manipulation; }
+.classic-game .mine-cell.revealed { border: 1px solid #989f96; background: #dddcd1; }
+.classic-game .mine-cell.exploded { background: #e46b65; color: #20181d; }
+.classic-game .mine-cell.wrong-flag { color: #b91d20; }
+.classic-game .mine-cell[data-number="2"] { color: #186425; }
+.classic-game .mine-cell[data-number="3"] { color: #aa151c; }
+.classic-game .mine-cell[data-number="4"] { color: #4b2879; }
+.classic-game .mine-cell[data-number="5"], .classic-game .mine-cell[data-number="6"] { color: #763719; }
+@media (max-width: 600px) {
+  .classic-game { padding: 7px; }
+  .classic-head { align-items: flex-start; flex-direction: column; gap: 3px; }
+  .classic-layout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .classic-game .m-game-leaderboard { border-left: 0; border-top: 1px solid var(--os-border, var(--border, #748487)); padding: 8px 0 0; }
+  .classic-game .m-game-leaderboard li span { max-width: 75%; }
+  .solitaire-table { padding: 6px; --card-height: 65px; }
+  .solitaire-top, .solitaire-columns { gap: 3px; min-width: 270px; }
+  .classic-game .sol-card { font-size: 15px; padding: 3px; }
+  .classic-mines .mine-grid { --mine-size: 28px; }
+  .classic-actions button { min-height: 34px; }
+}
+.classic-game .mine-reset-face { color: #242d34; background: #e9cf62; font: bold 21px/1 monospace; min-width: 31px; min-height: 29px; padding: 2px; border: 2px outset #f5e8b7; }
+@media(min-width:801px){.os-window-layer .os-window[data-game=minesweeper]:has(.classic-mines-beginner){width:min(640px,calc(100vw - 215px));left:max(185px,calc((100vw - min(640px,calc(100vw - 215px)))/2))}
+.os-window-layer .os-window[data-game=minesweeper]:has(.classic-mines-intermediate){width:min(760px,calc(100vw - 215px))}
+.os-window-layer .os-window[data-game=minesweeper]:has(.classic-mines-expert){width:min(960px,calc(100vw - 215px))}
+}
+.classic-rules ul{margin:4px 0 8px;padding-left:17px}
+.classic-rules li{margin:3px 0;line-height:1.35}
+.classic-head .m-game-expand{font-size:10px;margin-left:auto}
+.solitaire-table{touch-action:none;user-select:none}
+.solitaire-table.is-dragging{cursor:grabbing}
+.classic-game .sol-valid-target{outline:2px dashed #b5f4e3;outline-offset:-2px}
+.classic-game .sol-column.sol-valid-target{background:#348b68;border-radius:4px}
+.sol-drag-preview{position:fixed;z-index:9999;pointer-events:none;background:#fff6cf;color:#173438;padding:9px;border:3px solid #ecb33e;border-radius:5px;min-width:43px;min-height:60px;box-shadow:3px 3px 0 #082b3755;font:bold 20px Georgia,serif}
+.sol-drag-preview small{font-size:12px}
+.mine-touch-modes{display:flex;gap:5px}
+.mine-pan-help{font-size:11px;margin:5px 0}
+.mine-scroll{overscroll-behavior:contain;touch-action:pan-x pan-y}
+.classic-rules summary{padding:7px 0;font-weight:bold}
+.classic-game.m-game-is-expanded .m-game-leaderboard{display:none}
+.classic-game.m-game-is-expanded .classic-layout{grid-template-columns:minmax(0,1fr)}
+@media(max-width:767px){.classic-game{padding:6px}
+.classic-head{flex-direction:row;align-items:center;flex-wrap:wrap;gap:7px}
+.classic-head h2{font-size:19px}
+.classic-head>div{font-size:11px;width:100%}
+.classic-head .m-game-expand{min-height:44px}
+.classic-layout{grid-template-columns:minmax(0,1fr)}
+.classic-game button,.classic-game select{min-height:40px}
+.classic-game .sol-card{min-height:0;font-size:clamp(15px,4.6vw,20px);padding:4px 2px}
+.solitaire-table{padding:5px;--card-height:75px;--sol-step:28px}
+.solitaire-top,.solitaire-columns{min-width:0;gap:3px}
+.classic-game .sol-column-label{min-height:20px}
+.classic-game .mine-grid{--mine-size:34px}
+.mine-scroll{width:max-content;max-height:50dvh;max-width:100%;scrollbar-width:auto}
+.classic-game .mine-cell{min-height:var(--mine-size);font-size:18px}
+.mines-options{gap:7px}
+.mines-options label{font-size:12px}
+.mine-touch-modes{width:100%}
+.mine-touch-modes button{flex:1;font-size:15px;min-height:44px}
+.classic-status{font-size:12px}
+.classic-game.m-game-is-expanded .mine-scroll{max-height:calc(100dvh - 260px)}
+.classic-game .m-game-leaderboard{border-left:0;border-top:1px solid var(--os-border);padding:8px 0 0}
+.classic-game .m-game-leaderboard li span{max-width:75%}
+.classic-solitaire .classic-actions{display:grid;grid-template-columns:1fr 1fr}.classic-solitaire .classic-actions button{min-height:44px}
+.classic-game .classic-selection button{font-size:12px;min-height:36px}
+}

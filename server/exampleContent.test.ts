@@ -1,0 +1,10 @@
+import express from 'express';
+import {beforeAll,afterAll,it,expect} from 'vitest';
+import type {Server} from 'node:http';
+import {mountContentRoutes} from './content';
+import {mountGuideRoutes} from './guide';
+let server:Server,base:string;
+beforeAll(async()=>{const app=express();app.use(express.json());mountContentRoutes(app);mountGuideRoutes(app);server=await new Promise<Server>(resolve=>{const s=app.listen(0,'127.0.0.1',()=>resolve(s));});const a=server.address();if(!a||typeof a==='string')throw Error('No port');base=`http://127.0.0.1:${a.port}`;});
+afterAll(async()=>{await new Promise<void>(resolve=>server.close(()=>resolve()));});
+it('serves fictional public data and registered artwork without publishing editorial provenance',async()=>{const r=await fetch(base+'/api/content');expect(r.status).toBe(200);const body=await r.json();expect(body.resume.name).toBe('Jordan Example');expect(JSON.stringify(body)).not.toMatch(/sourceRefs|reviewNotes/);expect((await fetch(base+'/media/example-1.svg')).status).toBe(200);expect((await fetch(base+'/media/unregistered.svg')).status).toBe(404);expect((await fetch(base+'/api/editor/content')).status).toBe(401);});
+it('keeps the no-key guide useful and refuses unsupported financial claims',async()=>{for(const question of ['How can I contact Jordan?','What is Jordan salary?']){const r=await fetch(base+'/api/guide',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({question})});expect(r.status).toBe(200);const answer=await r.json();expect(answer.mode).toBe('local');expect(answer.refused).toBe(question.includes('salary'));if(question.includes('contact'))expect(answer.citations).toContainEqual({title:'Contact / Elsewhere',url:'/contact'});}});

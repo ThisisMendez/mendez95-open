@@ -1,0 +1,18 @@
+[
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "example-note",
+    "slug": "example-note",
+    "title": "Documenting a product decision",
+    "summary": "A fictional note about writing down the problem, options, tradeoffs and evidence.",
+    "url": "https://medium.com/@exampleowner/example-decision",
+    "displayOrder": 0,
+    "tags": [
+      "demo"
+    ]
+  }
+]

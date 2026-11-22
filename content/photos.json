@@ -1,0 +1,59 @@
+[
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "sample-art-1",
+    "slug": "sample-art-1",
+    "title": "Generated example artwork 1",
+    "src": "/media/example-1.svg",
+    "alt": "Abstract geometric illustration 1",
+    "caption": "Original geometric sample; no personal photograph.",
+    "credit": "Mendez95 Open contributors",
+    "rights": "Original example artwork, MIT licensed.",
+    "rightsCleared": true,
+    "gallery": true,
+    "gallerySourceUrl": "https://www.instagram.com/p/demo1/",
+    "displayOrder": 1
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "sample-art-2",
+    "slug": "sample-art-2",
+    "title": "Generated example artwork 2",
+    "src": "/media/example-2.svg",
+    "alt": "Abstract geometric illustration 2",
+    "caption": "Original geometric sample; no personal photograph.",
+    "credit": "Mendez95 Open contributors",
+    "rights": "Original example artwork, MIT licensed.",
+    "rightsCleared": true,
+    "gallery": true,
+    "gallerySourceUrl": "https://www.instagram.com/p/demo2/",
+    "displayOrder": 2
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "sample-art-3",
+    "slug": "sample-art-3",
+    "title": "Generated example artwork 3",
+    "src": "/media/example-3.svg",
+    "alt": "Abstract geometric illustration 3",
+    "caption": "Original geometric sample; no personal photograph.",
+    "credit": "Mendez95 Open contributors",
+    "rights": "Original example artwork, MIT licensed.",
+    "rightsCleared": true,
+    "gallery": true,
+    "gallerySourceUrl": "https://www.instagram.com/p/demo3/",
+    "displayOrder": 3
+  }
+]

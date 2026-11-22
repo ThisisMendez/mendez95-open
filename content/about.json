@@ -1,0 +1,74 @@
+{
+  "journey": [
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "introduction",
+      "title": "Fictional profile \u00b7 Example City",
+      "body": "I am Jordan Example, a fictional person demonstrating this portfolio. All biographical content in this edition is invented.",
+      "displayOrder": 0
+    },
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "example-journey",
+      "title": "Start with a clear question",
+      "body": "Build a small experiment, check the result and record what changed.",
+      "displayOrder": 1
+    }
+  ],
+  "principles": [
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "build-introduction",
+      "label": "How this example is built",
+      "body": "TypeScript, React, Vite, Express and a Cloudflare Worker adapter.",
+      "displayOrder": 0
+    },
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "build-components",
+      "label": "Build reusable components",
+      "body": "Keep data separate from behavior and test important boundaries.",
+      "displayOrder": 1
+    },
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "philosophy-evidence",
+      "label": "Use evidence",
+      "body": "State the question, compare options and verify the result.",
+      "displayOrder": 2
+    }
+  ],
+  "competencies": [
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "example-competency",
+      "label": "Product thinking",
+      "body": "Define a useful problem and make tradeoffs visible.",
+      "displayOrder": 0
+    }
+  ]
+}

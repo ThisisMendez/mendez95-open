@@ -1,0 +1,83 @@
+.os-case-lede { display: grid; gap: .65rem; }
+.os-case-lede h1 { margin: 0; max-width: 22ch; }
+.os-case-meta { display: flex; flex-wrap: wrap; gap: .55rem; }
+.os-case-meta > span { display: grid; gap: .15rem; min-width: 9rem; padding: .55rem .7rem; border: 1px solid var(--os-hairline); background: var(--os-raised); }
+.os-case-meta b { color: var(--os-muted); font: 700 .58rem/1.2 var(--os-mono); letter-spacing: .08em; text-transform: uppercase; }
+.os-case-primary-visual { display: grid; min-height: 15rem; margin: 1.25rem 0; padding: clamp(1rem, 4vw, 2.5rem); align-content: space-between; border: 1px solid var(--os-border); background: linear-gradient(135deg, var(--os-raised), var(--os-surface)); }
+.os-case-primary-visual span { color: var(--os-muted); font: 700 .65rem/1.2 var(--os-mono); letter-spacing: .1em; text-transform: uppercase; }
+.os-case-primary-visual strong { max-width: 12ch; color: var(--os-accent); font: 700 clamp(2rem, 7vw, 4.75rem)/.95 var(--os-display); }
+.os-case-highlights:empty { display: none; }
+.os-case-highlights strong { line-height: 1.35; }
+.os-about-intro { display: grid; grid-template-columns: minmax(150px, 210px) minmax(0, 1fr); gap: clamp(1.2rem, 4vw, 2.5rem); align-items: start; margin-bottom: 1.5rem; }
+.os-about-portrait { overflow: hidden; border: 1px solid var(--os-border); background: var(--os-raised); }
+.os-about-portrait img { display: block; width: 100%; aspect-ratio: 1 / 1.14; object-fit: cover; object-position: center top; filter: grayscale(1); transition:filter 180ms ease; }
+.os-about-copy h1 { margin: .25rem 0 0; }
+.os-about-subtitle { margin: .35rem 0 1.15rem; color: var(--os-muted); font: 700 .72rem/1.4 var(--os-mono); letter-spacing: .06em; text-transform: uppercase; }
+.os-about-prose { max-width: 70ch; }
+.os-about-prose p { margin: 0 0 .8rem; }
+@media(hover:hover){.os-about-portrait:hover img{filter:grayscale(0)}}
+html[data-motion=reduced] .os-about-portrait img{transition:none}
+@media(prefers-reduced-motion:reduce){.os-about-portrait img{transition:none}}
+.os-about-hiring{margin-top:12px;padding:10px 12px;border:1px solid var(--os-hairline);border-left:3px solid var(--os-accent);background:var(--os-raised)}
+.os-about-hiring p{margin:0!important}.os-about-hiring button{border:0;padding:0;background:none;color:var(--os-accent);font:inherit;cursor:pointer;text-decoration:underline}
+.os-about-prose>p:first-child{font-weight:600}
+.os-about-toolkit-heading h2{font-size:16px;margin:0 0 6px}.os-about-toolkit-heading p{margin:0 0 12px;font-size:13px;line-height:1.4}
+.os-about .os-entry .os-toolkit-labels{font-size:12px;font-weight:700;color:var(--os-accent);line-height:1.4;margin:0 0 8px}
+.os-toolkit-category{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-right:6px;border:1px solid var(--os-hairline);background:var(--os-raised);color:var(--os-accent);font:700 15px/1 Arial}
+.os-inline-link, .os-about-links a, .os-about-links button { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: .2em; }
+.os-about-links { display:grid; gap:6px; margin-top:1rem; }
+.os-about-social-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}.os-about-social-item{display:inline-flex;align-items:center;gap:6px}.os-about-social-separator{color:var(--os-muted)}.os-about-resume-row{display:flex;align-items:center;justify-content:center}
+.os-about-links a, .os-about-links button { padding: 0; border: 0; background: none; font: 700 .72rem/1.35 var(--os-mono); }
+.os-about .os-tabs { flex-wrap: wrap; }
+.os-about .os-entry-list { margin-top: 1rem; }
+
+@media (max-width: 620px) {
+  .os-about-intro { grid-template-columns: 96px minmax(0, 1fr); gap: 1rem; }
+  .os-about-portrait img { aspect-ratio: 1 / 1.2; }
+  .os-about-prose, .os-about-links { grid-column: 1 / -1; }
+  .os-case-meta > span { min-width: calc(50% - .3rem); flex: 1; }
+  .os-case-primary-visual { min-height: 11rem; }
+}
+.os-about-intro>div{min-width:0}.os-about .os-about-portrait{width:100%;height:auto;max-width:210px}.os-overview-grid>figure{margin:0}
+.os-about-subtitle{text-transform:none}
+.os-tools-groups .os-entry h2{font-size:14px;margin:0 0 5px}.os-tools-groups .os-entry p{font-size:13px;margin:0;line-height:1.4}.os-entry>a{font-size:12px;color:var(--os-accent);text-underline-offset:3px}
+
+/* Reference composition: persistent profile rail and one inset tabbed reader. */
+.os-app.os-about-desktop{display:grid;grid-template-columns:210px minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:12px 16px;padding:14px;height:100%;min-height:0}
+.os-about-sidebar{min-width:0;align-self:start}.os-about-desktop .os-about-sidebar h1{font-size:23px;margin:5px 0}.os-about-sidebar .os-eyebrow{margin-top:9px;font-size:10px}.os-about-sidebar .os-about-subtitle{font:12px/1.4 Arial;margin:6px 0;color:var(--os-muted);letter-spacing:0}.os-about-sidebar .os-about-links{gap:6px;margin-top:10px}.os-about-sidebar .os-about-links :is(a,button){font:12px/1.4 Arial;min-height:24px;text-decoration:underline;text-underline-offset:3px}
+.os-about-reader{display:flex;flex-direction:column;gap:8px;min-width:0;min-height:0}.os-about-tabs{display:flex;gap:4px;flex-wrap:wrap}.os-about-tabs button{padding:7px 8px;min-height:32px;border:2px solid;border-color:var(--os-border) #59696a #59696a var(--os-border);background:var(--os-raised);color:var(--os-text);font:12px/1.25 Arial;cursor:pointer}.os-about-tabs button[aria-selected=true]{background:var(--os-field);border-color:#59696a var(--os-border) var(--os-border) #59696a;font-weight:700}
+.os-about-reading-panel{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;border:2px solid;border-color:#627575 var(--os-border) var(--os-border) #627575;background:var(--os-field);padding:12px;font:14px/1.45 Arial}.os-about-reading-panel .os-about-prose{max-width:none}.os-about-reading-panel .os-about-prose p{max-width:none;margin:0 0 10px}.os-about-reading-panel .os-entry-list{margin:0}.os-about-reading-panel .os-entry h2{font-size:15px;margin:0 0 7px}.os-about-reading-panel .os-entry p{font-size:13px;max-width:none;line-height:1.45;margin:0 0 8px}
+.os-about-status{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--os-border);padding-top:6px;font:11px/1.2 var(--os-mono);color:var(--os-muted)}
+@media(min-width:768px){.os-window-layer .os-window[data-app=about]{left:max(24px,calc((100vw - min(820px,calc(100vw - 48px)))/2));width:min(820px,calc(100vw - 48px));height:min(640px,calc(100dvh - 124px));min-width:0}.os-window[data-app=about] .os-window-body{overflow:auto}}
+
+
+/* One About card owner: panel width drives columns; no per-card height forcing. */
+.os-about-reading-panel,.os-about .pocket-about-section{container-name:about-cards;container-type:inline-size}
+.os-about .os-about-card-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-content:start;align-items:start;margin:0}
+.os-about .os-about-card-grid .os-entry{box-sizing:border-box;min-width:0;max-width:100%;padding:16px;overflow-wrap:anywhere}
+.os-about .os-about-card-grid .os-entry h2{margin:0 0 8px;min-width:0;overflow-wrap:anywhere}
+.os-about .os-about-card-grid .os-entry p{max-width:none;margin:0 0 8px;overflow-wrap:anywhere}
+.os-about .os-about-card-grid .os-entry p:last-child{margin-bottom:0}
+.os-about .os-about-card-grid .os-entry>a{display:inline-block;max-width:100%;margin-top:2px;overflow-wrap:anywhere;line-height:1.45}
+.os-about .os-about-card-grid .os-entry ul{margin:8px 0 0;padding-left:18px}.os-about .os-about-card-grid .os-entry li{margin:0 0 4px;line-height:1.4}
+.os-about .os-about-card-grid .os-eyebrow:empty{display:none}
+@container about-cards (min-width:30em){.os-about .os-about-cards-how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@container about-cards (min-width:34em){.os-about .os-about-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.os-about-cards-philosophies .os-entry[data-entry-id=philosophy-demo-platform]{grid-column:1/-1}}
+.pocket-shell .os-about .os-about-social-row a,.pocket-shell .os-about .os-about-resume-row button{font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+.pocket-shell .os-about .os-about-card-grid .os-entry>a{display:inline-flex;align-items:flex-start;min-height:44px;margin-top:0}.pocket-shell .os-about-cards-philosophies .os-entry>p{margin-bottom:6px}
+
+/* Phone-only tightening: keep card insets and touch targets; remove linebox gaps. */
+.pocket-shell .os-about :is(.os-about-cards-competencies,.os-about-cards-philosophies){gap:6px}
+.pocket-shell .os-about :is(.os-about-cards-competencies,.os-about-cards-philosophies) .os-entry{display:flex;flex-direction:column;align-items:flex-start}
+.pocket-shell .os-about :is(.os-about-cards-competencies,.os-about-cards-philosophies) .os-entry>p{margin-bottom:4px}
+.pocket-shell .os-about :is(.os-about-cards-competencies,.os-about-cards-philosophies) .os-entry>a{align-self:flex-start}
+.pocket-shell .os-about-cards-competencies .os-text-action{min-height:44px;margin:0}
+.pocket-shell .os-about :is(#competencies,#philosophies).pocket-about-section{margin-block:4px}
+.pocket-shell .os-side-project-index{display:flex;flex-direction:column;min-height:0}
+.pocket-shell .os-side-project-index>header{text-align:center;padding:14px 12px 8px}
+.pocket-shell .os-side-project-index>header h1{margin:0 0 6px;font-size:24px}
+.pocket-shell .os-side-project-index>header p{margin:0;font-size:14px;line-height:1.4}
+.pocket-shell .os-side-project-index .os-folder-toolbar{justify-content:center}
+/* Approved Pocket player portrait and compact About rhythm; desktop stays unchanged. */
+.pocket-shell .pocket-portrait-shell{box-sizing:border-box;width:100%;max-width:250px;margin:0 auto 16px;padding:8px;background:#d5e3cc;border:3px solid #172238;border-radius:10px 10px 17px 10px;box-shadow:inset 2px 2px #faffed,inset -3px -3px #8ba49b,3px 4px #82978d;color:#172238}.pocket-portrait-topline{display:flex;justify-content:space-between;align-items:center;padding:0 2px 7px;font:700 10px/1.3 var(--os-mono);letter-spacing:1px}.pocket-portrait-power{width:6px;height:6px;border-radius:50%;background:#bc3055;box-shadow:0 0 0 1px #172238}.pocket-portrait-switch{box-sizing:border-box;display:block;width:100%;aspect-ratio:4/3;padding:0;border:3px solid #172238;border-radius:3px;background:#fff;overflow:hidden;box-shadow:0 0 0 2px #8ba49b;cursor:pointer}.pocket-portrait-switch img{display:block;width:100%;height:100%;object-fit:cover}.pocket-portrait-switch img.is-photo{object-position:center 21%}.pocket-portrait-caption{display:flex;justify-content:space-between;align-items:center;gap:5px;padding:9px 2px 1px;font:10px/1.4 var(--os-mono)}.pocket-portrait-switch:focus-visible{outline:3px solid #146dc1;outline-offset:4px}
+.pocket-shell .os-about .pocket-about-section{margin-block:5px}.pocket-shell .os-about .os-about-card-grid{gap:6px;margin:0;padding:6px}.pocket-shell .os-about .os-about-card-grid .os-entry{padding:10px;min-height:0}.pocket-shell .os-about .os-about-card-grid .os-entry h2{margin:0 0 5px;font-size:15px;line-height:1.3}.pocket-shell .os-about .os-about-card-grid .os-entry p{margin:0 0 5px;line-height:1.4}.pocket-shell .os-about .os-about-card-grid .os-entry .os-eyebrow{margin:0 0 4px;font-size:10px;line-height:1.35}.pocket-shell .os-about .os-about-toolkit-heading{padding:10px 10px 0}.pocket-shell .os-about .os-about-toolkit-heading p{margin-bottom:4px}.pocket-shell .os-about .os-about-card-grid .os-entry ul{margin-top:5px}.pocket-shell .os-about .os-about-cards-philosophies .os-entry>a{min-height:36px;align-items:center;line-height:1.3}.pocket-shell .os-about .os-about-cards-competencies .os-text-action{min-height:36px}.pocket-shell .os-about .os-about-cards-journey .os-entry{display:flex;flex-direction:column}.pocket-shell .os-about .os-about-cards-journey .os-eyebrow{order:3;margin:2px 0 0!important}.pocket-shell .os-about .os-about-cards-journey .os-entry>p{margin-bottom:3px}

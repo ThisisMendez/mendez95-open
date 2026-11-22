@@ -1,0 +1,4 @@
+import {afterEach,describe,it,expect,vi} from 'vitest';
+import {dismissPreparedTip,setTipsEnabled,tipDismissals,tipsEnabled} from './tipPreferences';
+afterEach(()=>vi.unstubAllGlobals());
+describe('prepared tip preference',()=>{it('two tip dismissals persist disabled; manual re-enable resets the cycle',()=>{const data=new Map<string,string>();vi.stubGlobal('localStorage',{getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>data.set(k,v)});vi.stubGlobal('window',new EventTarget());setTipsEnabled(true);expect(dismissPreparedTip()).toBe(1);expect(tipsEnabled()).toBe(true);expect(dismissPreparedTip()).toBe(2);expect(tipsEnabled()).toBe(false);expect(tipDismissals()).toBe(2);setTipsEnabled(true);expect(tipDismissals()).toBe(0);expect(dismissPreparedTip()).toBe(1);expect(tipsEnabled()).toBe(true);});});

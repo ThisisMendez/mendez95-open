@@ -1,0 +1,16 @@
+/* Shared surface lifecycle; app-specific default geometry remains its owner. */
+.os-window[data-managed] .os-titlebar{touch-action:none;user-select:none;cursor:grab;flex-shrink:0}
+.os-window[data-managed] .os-titlebar:active{cursor:grabbing}
+.os-window[data-managed] .os-titlebar button{cursor:pointer;touch-action:manipulation}
+.os-title-actions{flex-shrink:0;gap:3px}.os-title-actions button:disabled{opacity:.5;cursor:not-allowed!important;background:#c6cac7;color:#566364;text-shadow:1px 1px #fff}
+.os-window[data-minimized=true]{visibility:hidden!important;pointer-events:none!important}
+.os-root .os-window-layer{z-index:auto}
+.os-root .os-taskbar{z-index:90000}.os-root .os-menubar{z-index:90001}.os-root .os-start-menu{z-index:90002}.os-root>.os-desktop-tour{z-index:90003}
+.os-window.os-managed-widget{display:flex;flex-direction:column;position:fixed;inset:0;margin:auto;padding:0;width:min(620px,calc(100vw - 24px));height:fit-content;min-height:0;max-height:calc(100dvh - 100px);color:var(--os-text)}
+.os-managed-widget .os-widget-expanded{min-height:0;flex:0 1 auto}
+@media(max-width:767px){.pocket-shell .os-window[data-managed][data-minimized=true]{visibility:visible!important;pointer-events:auto!important}.os-window[data-managed] .os-minimize,.os-window[data-managed] .os-maximize{display:none}}
+@media print{.os-managed-widget{display:none!important}}
+/* Fixed containers create their own stacking context even with z-index:auto.
+   Desktop app surfaces must share the manager's z order with widget windows;
+   an absolute, auto-z layer preserves geometry without trapping them below SNIP-E. */
+@media(min-width:768px){.os-root .os-window-layer{position:absolute}}

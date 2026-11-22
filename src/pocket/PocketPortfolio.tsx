@@ -1,0 +1,8 @@
+import type{Story}from'../content/types';
+import{CaseIcon}from'../components/visual/CaseIcon';
+import{storyLabel}from'../content/storyPresentation';
+import{portfolioOrganization}from'../content/portfolioPresentation';
+import './pocketCase.css';
+import{sourceRoute}from'../desktop/router';
+import{PORTFOLIO_CATEGORIES,type PortfolioCategory}from'../content/portfolioCategories';
+export function PocketPortfolio({stories,category,navigate,side=false}:{stories:Story[];category:PortfolioCategory;navigate:(path:string)=>void;side?:boolean}){return <div className="os-app pocket-portfolio"><h1>{side?'Side Projects':'Portfolio'}</h1><p>{side?'Small products, real questions, and useful answers.':'Selected work & case studies.'}</p>{!side&&<div className="pocket-category-controls" role="group" aria-label="Portfolio category">{PORTFOLIO_CATEGORIES.map((key,i)=><button key={key} aria-pressed={category===key} onClick={()=>navigate(`/work?category=${key}`)}>{['All','Builds','Case Studies','Workflows'][i]}</button>)}</div>}<div className="pocket-case-list">{stories.map((story,i)=><button key={story.id} data-case-id={story.id} onClick={()=>navigate(sourceRoute(story.kind,story.slug))}><CaseIcon caseId={story.id} size={38}/><span><small>{String(i+1).padStart(2,'0')}</small><strong>{storyLabel(story)}</strong><span>{story.subject}</span><small>{portfolioOrganization(story.context)}</small>{story.featured&&<b className="pocket-featured">Featured work</b>}</span><span aria-hidden="true">›</span></button>)}</div>{!stories.length&&<p>No published work in this category yet. Choose All to explore the available cases.</p>}</div>;}

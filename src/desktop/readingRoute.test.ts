@@ -1,0 +1,2 @@
+import{it,expect}from'vitest';import{resolveRoute}from'./router';
+it('full mode and section anchors do not create a second case identity',()=>{const a=resolveRoute('/work/demo-health-psm'),b=resolveRoute('/work/demo-health-psm?view=full#demo-health-psm-context');expect(b.path).toBe(a.path);expect(b.slug).toBe(a.slug);expect(b.view).toBe('full');expect(a.view).toBeUndefined();expect(resolveRoute('/work/demo-health-psm?view=other').view).toBeUndefined();});

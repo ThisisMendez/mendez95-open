@@ -1,0 +1,1 @@
+export function ExpandPlay({expanded,toggle}:{expanded:boolean;toggle:()=>void}){return <button type="button" className="m-game-expand" aria-pressed={expanded} onClick={toggle}>{expanded?'Exit expanded play':'Expand play'}</button>;}

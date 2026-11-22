@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import {expect,it} from 'vitest';
+import {validateSiteContent,toPublicContent} from './validation';
+import type {SiteContent} from './types';
+import {resumeChapters} from '../apps/core/ResumeApp';
+const seed=()=>Object.fromEntries(['stories','field-notes','photos','resume','about','elsewhere'].map(n=>[n==='field-notes'?'fieldNotes':n,JSON.parse(readFileSync(`content/${n}.json`,'utf8'))])) as unknown as SiteContent;
+it('ships valid fictional data and strips editorial metadata at the API boundary',()=>{const data=seed();expect(validateSiteContent(data)).toEqual([]);expect(data.resume.name).toBe('Jordan Example');expect(JSON.stringify(toPublicContent(data))).not.toMatch(/sourceRefs|reviewNotes/);expect(toPublicContent(data).stories.length).toBeGreaterThan(0);});
+it('honors resume publication boundaries with fictional entries',()=>{const data=seed();expect(resumeChapters(data.resume)[0]?.entries).toHaveLength(1);data.resume.entries[0]!.status='draft';expect(resumeChapters(data.resume)[0]?.entries).toHaveLength(0);});
+it('fails closed for drafts and unreviewed media while preserving private editor data only in the source',()=>{const data=seed();data.stories[0]!.status='draft';data.photos[0]!.rightsCleared=false;data.resume.status='draft';const view=toPublicContent(data);expect(view.stories.some(s=>s.id===data.stories[0]!.id)).toBe(false);expect(view.photos.some(p=>p.id===data.photos[0]!.id)).toBe(false);expect(view.resume).toBeNull();expect(data.stories[1]!.sourceRefs).toHaveLength(1);});
+it('rejects traversing public asset paths and incomplete publication metadata',()=>{const data=seed();data.photos[0]!.src='/media/../private.svg';expect(validateSiteContent(data).length).toBeGreaterThan(0);data.photos[0]!.src='/media/example-1.svg';data.stories[0]!.sourceRefs=[];expect(validateSiteContent(data).length).toBeGreaterThan(0);});

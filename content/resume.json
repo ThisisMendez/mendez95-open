@@ -1,0 +1,41 @@
+{
+  "status": "published",
+  "disclosureStatus": "cleared",
+  "sourceRefs": [
+    "Fictional example authored for this repository."
+  ],
+  "name": "Jordan Example",
+  "introduction": "Fictional profile for exploring this portfolio template. Replace it with your own content.",
+  "chapters": [
+    {
+      "id": "example-career",
+      "dates": "Example dates",
+      "title": "Example Career",
+      "displayOrder": 0
+    }
+  ],
+  "entries": [
+    {
+      "status": "published",
+      "disclosureStatus": "cleared",
+      "sourceRefs": [
+        "Fictional example authored for this repository."
+      ],
+      "id": "example-role",
+      "chapter": "example-career",
+      "kind": "employment",
+      "organization": "Example Studio",
+      "title": "Product Builder",
+      "dates": "Example dates",
+      "summary": "A fictional role demonstrating the resume layout.",
+      "additionalLines": [
+        "No real employment information is included."
+      ],
+      "displayOrder": 0
+    }
+  ],
+  "footerLines": [
+    "owner@example.invalid \u00b7 Fictional example"
+  ],
+  "outsideWork": "Drawing geometric artwork and experimenting with interfaces."
+}

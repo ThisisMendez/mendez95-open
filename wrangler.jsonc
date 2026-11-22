@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mendez95-open",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-23",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mendez95-open",
+      "migrations_dir": "worker/migrations"
+    }
+  ],
+  "vars": {
+    "RUNTIME_ENV": "local",
+    "OWNER_AUTH_MODE": "operator",
+    "AUTH_EPOCH": "1",
+    "OWNER_ORIGIN": "http://127.0.0.1:8787",
+    "EXTERNAL_FETCH_ENABLED": "false",
+    "MODEL_ENABLED": "false",
+    "X_BROWSER_ENABLED": "false"
+  }
+}

@@ -1,0 +1,3 @@
+/* Original bitmap faces retain their own colors; only the outer frame is accented. */
+.lounge-character{display:inline-block;width:40px;height:40px;flex:0 0 40px;background-repeat:no-repeat;image-rendering:pixelated;vertical-align:middle;border-radius:2px;box-shadow:0 0 0 2px var(--lounge-ink,#076563)}
+.lounge-color-teal{--lounge-ink:#076563}.lounge-color-coral{--lounge-ink:#a43143}.lounge-color-violet{--lounge-ink:#703b91}.lounge-color-blue{--lounge-ink:#23549c}.lounge-color-amber{--lounge-ink:#805413}.lounge-color-forest{--lounge-ink:#32622f}

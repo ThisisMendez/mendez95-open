@@ -1,0 +1,13 @@
+[
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "email",
+    "label": "Example email (not a real inbox)",
+    "url": "mailto:owner@example.invalid",
+    "displayOrder": 0
+  }
+]

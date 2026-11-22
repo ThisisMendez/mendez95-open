@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';
+import {improvedBest,personalScoreKey} from './personalBest';
+describe('personal game records',()=>{it('keeps difficulty identities separate',()=>{expect(personalScoreKey('minesweeper','beginner')).toBe('minesweeper:beginner');expect(personalScoreKey('minesweeper','expert')).toBe('minesweeper:expert');expect(personalScoreKey('minesweeper')).toBeNull();});it('preserves highest earned points and lowest clear time',()=>{expect(improvedBest('snake',40,20)).toBe(40);expect(improvedBest('solitaire',500,900)).toBe(900);expect(improvedBest('minesweeper',80,60)).toBe(60);expect(improvedBest('minesweeper',60,80)).toBe(60);expect(improvedBest('bounce',undefined,0)).toBeUndefined();expect(improvedBest('snake',10,NaN)).toBe(10);});});

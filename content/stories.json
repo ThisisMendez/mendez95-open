@@ -1,0 +1,234 @@
+[
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-platform",
+    "slug": "demo-platform",
+    "title": "Example Platform",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": true,
+    "displayOrder": 0,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Platform\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-health-psm",
+    "slug": "demo-health-psm",
+    "title": "Example Health Platform",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 1,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Health Platform\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-health-platform-lifecycle",
+    "slug": "demo-health-platform-lifecycle",
+    "title": "Example API Lifecycle",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 2,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example API Lifecycle\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-health-measure-and-invest",
+    "slug": "demo-health-measure-and-invest",
+    "title": "Example Measurement",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 3,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Measurement\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-data-field-quality",
+    "slug": "demo-data-field-quality",
+    "title": "Example Data Quality",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 4,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Data Quality\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "demo-coaching",
+    "slug": "demo-coaching",
+    "title": "Example Coaching",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 5,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Coaching\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "mendez-95-build",
+    "slug": "mendez-95-build",
+    "title": "Building a Desktop Portfolio",
+    "kind": "case-study",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 6,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Building a Desktop Portfolio\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  },
+  {
+    "status": "published",
+    "disclosureStatus": "cleared",
+    "sourceRefs": [
+      "Fictional example authored for this repository."
+    ],
+    "id": "sample-side-project",
+    "slug": "sample-side-project",
+    "title": "Example Side Project",
+    "kind": "side-project",
+    "subject": "Fictional product example",
+    "context": "Example Studio \u00b7 Demonstration",
+    "summary": "A fictional case showing how to document a product decision. No real employment or customer information is included.",
+    "role": "Example product builder",
+    "featured": false,
+    "displayOrder": 7,
+    "tags": [
+      "demo",
+      "product"
+    ],
+    "relatedIds": [],
+    "problem": "People need a clear way to explore a project.",
+    "decisions": "Use a desktop shell with a separate Pocket layout and reusable content.",
+    "execution": "Build small components and validate behavior with automated tests.",
+    "results": "This demonstration runs locally with fictional content.",
+    "lessons": "Keep content separate from application behavior.",
+    "articleMarkdown": "# Example Side Project\n\n## The problem\nThis is fictional example content.\n\n## The decision\nUse reusable components and explicit state.\n\n## Verification\nRun the provided automated tests.",
+    "maturity": "prototype"
+  }
+]

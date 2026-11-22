@@ -1,0 +1,168 @@
+.os-widgets { display: grid; align-content: start; gap: 9px; padding: 8px; width: 100%; box-sizing: border-box; color: var(--text, #17222b); font-size: .78rem; }
+.os-widget { min-width: 0; border: 2px solid; border-color: var(--bevel-light, #fff) var(--bevel-dark, #5b6670) var(--bevel-dark, #5b6670) var(--bevel-light, #fff); background: var(--surface, #d9dcda); box-shadow: 2px 3px 0 rgba(0,0,0,.16); }
+.os-widget-title { min-height: 25px; display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 2px 6px; background: var(--os-accent); color: var(--os-accent-ink); font-size: .76rem; }
+.os-widget-title span { opacity: .65; letter-spacing: 3px; cursor: default; }
+.os-widget-body { padding: 9px; }
+.os-widget-body p { margin: 6px 0; line-height: 1.35; }
+.os-widget-body small { color: var(--muted, #4c5a5f); font-size: .7rem; }
+.os-widget-body a { color: var(--accent, #126f71); font-weight: 700; overflow-wrap: anywhere; }
+.os-widget-body button { min-height: 30px; padding: 4px 7px; background: var(--raised, #e7e9e7); color: var(--text, #17222b); border: 2px solid; border-color: var(--bevel-light, #fff) var(--bevel-dark, #5b6670) var(--bevel-dark, #5b6670) var(--bevel-light, #fff); cursor: pointer; font: inherit; }
+.os-widget-body input { min-width: 0; padding: 5px; border: 1px solid var(--border, #657477); background: var(--raised, #fff); color: var(--text, #17222b); font: inherit; }
+.os-widget-body button:focus-visible, .os-widget-body input:focus-visible, .os-widget-body a:focus-visible { outline: 3px solid var(--focus, #ffc142); outline-offset: 2px; }
+.os-widget-weather, .os-widget-clocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+.os-widget-weather > div, .os-widget-clocks > div { display: grid; align-content: start; gap: 2px; padding: 6px; border: 1px solid var(--border, #9ca9a9); background: var(--raised, #f0f2ec); }
+.os-widget-weather strong, .os-widget-clocks strong { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.os-widget-weather span { font-size: .68rem; }
+.os-widget-linkbutton { margin-top: 7px; margin-right: 5px; }
+.os-widget-source { display: block; margin-top: 8px; }
+.os-widget-city { display: grid; gap: 5px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--border, #9ca9a9); }
+.os-widget-city div { display: flex; gap: 4px; }
+.os-widget-city ul, .os-widget-countries { list-style: none; margin: 3px 0; padding: 0; }
+.os-widget-city li button { display: block; width: 100%; text-align: left; margin: 2px 0; }
+.os-widget-number { display: block; font-size: 2rem; font-variant-numeric: tabular-nums; line-height: 1; }
+.os-widget-map { color: var(--accent, #086b67); }
+.os-widget-map svg { display: block; width: 100%; height: auto; }
+.os-widget-countries { max-height: 90px; overflow: auto; }
+.os-widget-countries li { display: flex; justify-content: space-between; gap: 5px; border-bottom: 1px dotted var(--border, #9ca9a9); padding: 3px 0; }
+.os-widget-music { display: flex; align-items: center; gap: 9px; margin-bottom: 8px; }
+.os-widget-music p { font-size: .7rem; }
+.os-widget-disc { flex: none; position: relative; width: 56px; height: 56px; border-radius: 50%; background: repeating-radial-gradient(circle, #30383c 0 2px, #697476 3px 4px, #27343a 5px 7px); border: 2px solid #0f2429; box-shadow: 2px 2px 0 rgba(0,0,0,.3); }
+.os-widget-disc span { position: absolute; left: 18px; top: 18px; width: 20px; height: 20px; border-radius: 50%; background: #eec960; border: 4px solid #9e544d; box-sizing: border-box; }
+.os-widget-player { display: block; width: 100%; height: 166px; border: 0; margin: 7px 0; }
+.os-widget-error { margin: 0; padding: 5px; background: #fff2d3; color: #423d31; }
+html[data-theme="light"] .os-widget-disc { filter: grayscale(1); }
+@media (prefers-reduced-motion: reduce) { .os-widgets *, .os-widgets *::before, .os-widgets *::after { animation: none !important; transition: none !important; } }
+
+/* Compact cards use independent content-height stacks; details are managed windows. */
+.os-widgets { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; padding: 0; font-size: .73rem; }
+.os-widget-body { padding: 8px; }
+.os-widget-title { min-height: 24px; font-size: .68rem; }
+.os-widget-title span { display: none; }
+.os-widget-body button { min-height: 30px; }
+.os-widget-weather, .os-widget-clocks { grid-template-columns: 1fr; gap: 5px; }
+.os-widget-weather > div { padding: 0 0 5px; border: 0; border-bottom: 1px dotted var(--os-border); background: transparent; }
+.os-widget-weather span { font-size: .66rem; }
+.os-weather-reading { display: flex; align-items: center; gap: 7px; }
+.os-weather-icon { width: 44px; height: 34px; flex: none; }
+.os-widget-clocks > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3px; padding: 5px 0; border: 0; border-bottom: 1px dotted var(--os-border); background: transparent; }
+.os-widget-clocks strong { font-size: .96rem; white-space: nowrap; }
+.os-widget-actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.os-widget-music { align-items: start; gap: 6px; }
+.os-widget-music strong { font-size: .73rem; }
+.os-widget-disc { width: 35px; height: 35px; }
+.os-widget-disc span { left: 10px; top: 10px; width: 12px; height: 12px; border-width: 3px; }
+.os-widget-error { grid-column: 1/-1; }
+.os-widget-stack{display:flex;flex-direction:column;align-self:start;gap:9px;min-width:0}
+.os-passport-stamp{margin:3px auto 7px;width:fit-content;max-width:100%;padding:9px 12px;border:2px solid currentColor;outline:1px dashed currentColor;outline-offset:-5px;text-align:center;color:#225c63;background:#f6f2e5;transform:rotate(-2deg);box-sizing:border-box}
+.os-passport-stamp span{display:block;font:10px/1.4 var(--os-mono);overflow-wrap:anywhere}
+.os-passport-stamp .os-widget-number{font-size:2rem;line-height:1.2;margin:4px 0}
+.os-passport-origin{display:block;text-align:center}
+.os-widget[data-widget=Visitors] .os-widget-actions{justify-content:center}
+.os-widget-stack .os-widget{flex:none}
+
+.os-widget-dialog { position: fixed; inset: 0; margin: auto; padding: 0; width: min(620px,calc(100vw - 24px)); max-height: calc(100dvh - 100px); color: var(--os-text); }
+.os-widget-dialog:not([open]) { display: none; }
+.os-widget-dialog::backdrop { background: rgb(0 20 30 / 35%); }
+.os-widget-expanded { padding: 1rem; overflow: auto; font-size: .9rem; }
+.os-widget-expanded h2 { margin: 0 0 .7rem; font-size: 1.15rem; }
+.os-widget-expanded button { padding: .4rem .65rem; min-height: 34px; background: var(--os-raised); color: var(--os-text); border: 1px solid var(--os-border); }
+.os-widget-expanded small { display: block; color: var(--os-muted); }
+.os-widget-expanded .os-widget-map { max-width: 420px; margin: auto; }
+.os-widget-expanded .os-widget-countries { max-height: none; }
+.os-widget-expanded input { width: 100%; min-width: 0; padding: .5rem; color: var(--os-text); background: var(--os-raised); border: 1px solid var(--os-border); }
+.os-widget-expanded .os-widget-city { margin: 0; border: 0; }
+.os-forecast-place + .os-forecast-place { border-top: 1px solid var(--os-hairline); margin-top: 1rem; padding-top: 1rem; }
+.os-forecast-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 5px; margin: .5rem 0 1rem; }
+.os-forecast-grid > div { display: grid; justify-items: center; padding: .5rem .2rem; background: var(--os-raised); font-size: .75rem; }
+.os-world-clock-list { display: grid; margin-bottom: .8rem; }
+.os-world-clock-list > div { display: flex; justify-content: space-between; gap: .8rem; align-items: center; padding: .65rem 0; border-bottom: 1px dotted var(--os-border); }
+.os-world-clock-list strong { font: 700 1.2rem var(--os-mono); white-space: nowrap; }
+@media (min-width:801px) and (max-height:800px) {
+  .os-widgets { gap: 6px; }
+  .os-widget-body { padding: 6px; }
+  .os-widget-title { min-height: 21px; }
+  .os-widget-body p { margin: 4px 0; }
+  .os-weather-icon { width: 34px; height: 27px; }
+  .os-widget-weather, .os-widget-clocks { gap: 2px; }
+  .os-widget-weather > div { padding-bottom: 2px; }
+  .os-widget-map svg { max-height: 80px; }
+  .os-widget-body small { font-size: .64rem; }
+}
+@media (max-width:480px) { .os-forecast-grid { gap: 2px; } .os-forecast-grid > div { font-size: .65rem; } .os-forecast-grid .os-weather-icon { width: 34px; } }
+@media (min-width:801px) and (max-height:800px) {
+  .os-widget-weather > div { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 1px 4px; align-items: center; }
+  .os-widget-weather > div > small { grid-column: 1; }
+  .os-widget-weather .os-weather-reading { grid-column: 2; grid-row: 1 / 3; gap: 3px; }
+  .os-widget-weather > div > span { grid-column: 1; }
+  .os-widget-weather strong { font-size: 1rem; }
+  .os-widget-weather .os-weather-icon { width: 25px; height: 25px; }
+  .os-widget-map svg { max-height: 58px; }
+  .os-widget[data-widget="Music"] .os-widget-body > p { display: none; }
+  .os-widget[data-widget="Music"] .os-widget-music p { margin-bottom: 0; }
+  .os-widget-music { margin-bottom: 4px; }
+}
+html[data-theme="light"] .os-weather-icon { filter: grayscale(1); }
+.os-traffic-chart{display:flex;align-items:end;gap:5px;height:160px;margin:1rem 0}.os-traffic-chart>div{display:flex;flex:1;min-width:0;flex-direction:column;align-items:center;gap:4px;font-size:.68rem}.os-traffic-chart span{display:block;min-width:12px;width:70%;background:var(--os-accent)}.os-traffic-chart small{font-size:.6rem;white-space:nowrap}.os-city-ranking{padding-left:1.5rem}.os-city-ranking li{padding:.4rem;border-bottom:1px dotted var(--os-border)}.os-city-ranking b{float:right}
+/* X owns the embedded content; bound its viewport instead of stretching the desktop. */
+.os-x-timeline{min-width:0}.os-x-account{display:inline-block;margin-bottom:5px;font-weight:700;color:var(--os-accent);overflow-wrap:anywhere}
+.os-x-timeline-viewport{min-width:0;max-width:100%;height:min(560px,calc(100dvh - 240px));overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.os-x-timeline.is-compact .os-x-timeline-viewport{height:135px}
+.os-x-timeline-viewport[data-x-state=loading]{height:auto;min-height:65px}
+.os-x-timeline-viewport[data-x-state=unavailable],.os-x-timeline-viewport[data-x-state=narrow]{height:auto;min-height:50px}
+.os-x-timeline-target,.os-x-timeline-target>div{min-width:0;max-width:100%}.os-x-timeline-target iframe{max-width:100%!important;min-width:0!important}
+.os-x-timeline-status{font-size:12px}.os-x-timeline-status:empty{display:none}.os-x-timeline-actions{align-items:center;gap:5px}
+.os-x-timeline-actions a{margin-right:auto}.os-widget-expanded .os-x-timeline small{margin-top:10px;line-height:1.4}
+@media(max-width:767px){.os-x-timeline-viewport{height:min(520px,calc(100dvh - 260px))}.os-x-timeline-actions button,.os-x-timeline-actions a{min-height:44px;display:inline-flex;align-items:center}}
+.os-widget-disclosure{font-size:12px}
+/* Keep the single third-party canvas/player laid out when closed. A display:none
+   iframe reports a zero-sized artwork canvas to SoundCloud and cannot initialize. */
+.os-window.os-persistent-music[data-player-closed=true]{display:block;position:fixed;left:-10000px;top:0;width:560px;height:auto;visibility:hidden;pointer-events:none}
+
+/* Only World Clock sheds the generic application-window height. */
+:is(.os-widget-dialog,.os-managed-widget)[data-widget-dialog=clock]{width:min(480px,calc(100vw - 24px));height:fit-content;min-height:0;max-height:calc(100dvh - 100px)}
+:is(.os-widget-dialog,.os-managed-widget)[data-widget-dialog=clock] .os-widget-expanded{flex:0 1 auto;min-height:0;padding:12px 14px}:is(.os-widget-dialog,.os-managed-widget)[data-widget-dialog=clock] .os-world-clock-list{margin-bottom:10px}:is(.os-widget-dialog,.os-managed-widget)[data-widget-dialog=clock] .os-world-clock-list>div{padding:8px 0}
+
+/* Reserve two compact caption lines so Play/Pause never grows its grid row.
+   Longer provider errors remain scrollable here and readable in Open Player. */
+.os-widget[data-widget=Music] .os-widget-music p{block-size:2.7em;overflow:auto;overscroll-behavior:contain}
+
+.os-x-post-card{min-width:0;overflow-wrap:anywhere}.os-x-post-text{white-space:pre-wrap}.os-x-post-card time{display:block;margin:4px 0;font-size:11px;color:var(--os-muted)}.os-x-post-media{display:block;margin:6px 0}.os-x-post-media img{display:block;max-width:100%;max-height:180px;object-fit:contain;margin:auto}.os-x-post-card.is-compact .os-x-post-media img{max-height:80px}.os-x-post-card .os-widget-actions{align-items:center;justify-content:space-between}
+
+html[data-theme=light] .os-passport-stamp{color:#34464b;background:#f5f5ee}
+
+/* On X: Teal 95 chrome, with an inset card for quoted material. */
+.os-x-identity{display:flex;align-items:center;gap:8px;min-width:0}
+.os-x-avatar{display:grid;place-items:center;flex:none;width:32px;height:32px;background:var(--os-raised);color:var(--os-text);font:700 12px var(--os-mono);border:2px solid;border-color:var(--bevel-light,#fff) var(--bevel-dark,#5b6670) var(--bevel-dark,#5b6670) var(--bevel-light,#fff)}
+.os-x-identity>div{display:grid;gap:1px;min-width:0}.os-x-identity strong{font-size:13px}.os-x-identity a{font:11px var(--os-mono)}
+.os-x-post-card .os-x-post-text{white-space:pre-wrap;font-size:13px;line-height:1.5;margin:10px 0}
+.os-x-quote{margin:10px 0;padding:10px;background:var(--os-raised);border:2px solid;border-color:var(--bevel-dark,#5b6670) var(--bevel-light,#fff) var(--bevel-light,#fff) var(--bevel-dark,#5b6670);min-width:0}
+.os-x-quote-label{font:11px var(--os-mono);color:var(--os-muted);margin-bottom:5px}.os-x-quote p{font-size:12px;line-height:1.5;white-space:pre-wrap}.os-x-quote-author{font-size:12px}.os-x-original{font-size:11px}
+.os-x-post-card .os-x-post-media{position:relative;display:block;margin:8px 0;background:var(--os-field);border:1px solid var(--os-border);text-decoration:none}
+.os-x-post-card .os-x-post-media img{display:block;width:100%;max-height:190px;object-fit:cover}
+.os-x-media-caption{display:block;padding:6px 8px;background:var(--os-surface);color:var(--os-text);font:11px var(--os-mono)}
+.os-x-footer{margin-top:10px;padding-top:6px;border-top:1px solid var(--os-border)}.os-x-footer small{display:block;margin-top:8px;font-size:11px;color:var(--os-muted)}.os-x-footer small time{display:inline;color:inherit}
+.os-x-open-post{display:inline-flex;align-items:center;min-height:30px;padding:4px 8px;background:var(--os-raised);border:2px solid;border-color:var(--bevel-light,#fff) var(--bevel-dark,#5b6670) var(--bevel-dark,#5b6670) var(--bevel-light,#fff);font-size:12px;text-decoration:none}
+.os-x-post-card.is-compact .os-x-identity{gap:5px}.os-x-post-card.is-compact .os-x-avatar{width:25px;height:25px;font-size:10px}.os-x-post-card.is-compact .os-x-identity strong{font-size:11px}.os-x-post-card.is-compact .os-x-identity a{font-size:11px}
+.os-x-post-card.is-compact .os-x-post-text{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden;font-size:12px}.os-x-post-card.is-compact .os-x-quote{padding:6px}.os-x-post-card.is-compact .os-x-quote p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:11px}
+.os-x-post-card.is-compact .os-x-post-media img{max-height:90px}.os-x-post-card.is-compact .os-x-media-caption{padding:5px;font-size:11px}
+@media(pointer:coarse){.os-x-post-card a,.os-x-post-card button{min-height:44px}.os-x-identity a,.os-x-quote-author,.os-x-original{display:inline-flex;align-items:center}}
+
+/* Two independent first-screen stacks; Visitor Count follows Music. */
+@media(min-width:801px){.os-desktop .os-widget-column{overflow:visible;padding-bottom:0}.os-desktop .os-widget-stack{gap:8px}.os-desktop .os-widget[data-widget="Visitor Count"] .os-widget-actions{justify-content:center}.os-desktop .os-widget[data-widget="Around the World"] .os-widget-map svg{max-height:78px}.os-desktop .os-widget[data-widget="Signal Window"] .os-x-post-card.is-compact .os-x-post-text{-webkit-line-clamp:3}.os-desktop .os-widget[data-widget="Signal Window"] .os-x-post-card.is-compact .os-x-quote p{-webkit-line-clamp:2}.os-desktop .os-widget[data-widget="Signal Window"] .os-x-post-card.is-compact .os-x-post-media img{max-height:74px}.os-desktop .os-widget[data-widget="Visitor Count"] .os-passport-stamp{padding:7px 10px;margin-block:2px 5px}.os-desktop .os-widget[data-widget="Visitor Count"] .os-passport-origin{font-size:11px}}
+.os-x-avatar svg{width:65%;height:65%}
+.pocket-shell .pocket-utility[data-utility=signal]>.os-x-post-card{border:2px solid var(--pocket-line);border-radius:9px 9px 4px 4px;padding:15px;background:#e5d8f6;color:#17384a;box-shadow:inset 2px 2px #fffa,3px 3px #163d4d55}.pocket-shell .pocket-utility[data-utility=signal] .os-x-identity{gap:11px}.pocket-shell .pocket-utility[data-utility=signal] .os-x-identity strong{font:700 16px monospace}.pocket-shell .pocket-utility[data-utility=signal] .os-x-avatar{width:36px;height:36px;background:transparent;border:0}.pocket-shell .pocket-utility[data-utility=signal] .os-x-post-media{border:2px solid var(--pocket-line);border-radius:4px;overflow:hidden;background:#c9ded9}.pocket-shell .pocket-utility[data-utility=signal] .os-x-post-media img{max-height:240px}.pocket-shell .pocket-utility[data-utility=signal] .os-x-quote{background:#f9f5e7;border:1px solid #69898a;border-radius:4px;box-shadow:none;padding:10px}.pocket-shell .pocket-utility[data-utility=signal] .os-x-open-post{border:2px solid var(--pocket-line);border-radius:5px;background:#55c8bd;color:#17384a;min-height:44px;font:700 13px monospace;box-shadow:inset 2px 2px #fff9,2px 3px #163d4d55}.pocket-shell .pocket-utility[data-utility=signal] .os-x-footer small,.pocket-shell .pocket-utility[data-utility=signal] .os-x-post-card time{color:#456064}
+.os-widget-slot{min-width:0}.os-x-post-card .os-x-stale{color:var(--os-muted);font-size:11px}
+/* At the desktop/Pocket boundary, reserve two readable widget stacks. */
+@media(min-width:768px) and (max-width:800px){
+ html .os-desktop .os-home-layout{grid-template-columns:150px minmax(0,1fr) 410px;gap:6px;padding-inline:8px}
+ html .os-desktop .os-widget-column{width:410px;overflow:visible;padding:0;min-height:0;height:calc(100dvh - 116px);max-height:calc(100dvh - 116px)}
+ html .os-desktop .os-widgets{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:none;gap:8px}
+ html .os-desktop .os-widget-stack{gap:8px}
+ html .os-desktop .os-widget[data-widget="Around the World"] .os-widget-map svg{max-height:50px}
+ html .os-desktop .os-widget[data-widget="Visitor Count"] .os-passport-stamp{padding:5px 10px;margin-block:2px 5px}
+ html .os-desktop .os-widget[data-widget="Visitor Count"] .os-passport-origin{font-size:11px}
+ .os-desktop .os-icon-grid{grid-template-columns:repeat(2,70px);gap:3px}
+ .os-desktop .os-icon{width:70px;min-width:0}
+ .os-desktop .os-icon-art{width:36px;height:36px}
+ .os-desktop .os-icon-art svg{width:28px;height:28px}
+}

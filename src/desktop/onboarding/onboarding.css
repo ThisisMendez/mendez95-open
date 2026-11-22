@@ -1,0 +1,51 @@
+.os-welcome-window.os-window{position:fixed;z-index:79;left:50%;top:50%;transform:translate(-50%,-50%);width:min(660px,calc(100vw - 24px));height:auto;max-height:calc(100dvh - 110px);overflow:auto}
+.os-welcome-body{padding:16px;color:var(--os-text)}
+.os-welcome-intro{text-align:center;margin:0 0 16px}
+.os-welcome-intro .os-eyebrow{font-size:.62rem}
+.os-welcome-intro h1{font-size:1.65rem;line-height:1.15;margin:6px 0 4px;letter-spacing:-.025em}
+.os-welcome-intro p{font-size:.83rem;line-height:1.4;margin:5px auto;max-width:62ch}
+.os-welcome-intro .os-welcome-subtitle{font-size:.9rem;font-weight:700;margin:0 auto}
+.os-welcome-row{display:grid;grid-template-columns:minmax(0,1fr) 144px;gap:12px}
+.os-welcome-content{min-width:0}
+.os-welcome-content .os-video-preview{margin:12px 0 0}
+.os-welcome-tip{display:grid;grid-template-columns:28px minmax(0,1fr);align-content:start;gap:12px;min-height:160px;padding:18px 14px;background:#ffffdf;color:#172630;border:1px solid;border-color:#7b8278 #fff #fff #7b8278;box-shadow:inset 1px 1px #b6b8a9}
+.os-tip-icon{margin-top:0}
+.os-welcome-tip strong{display:block;font-size:.8rem;line-height:1.3;margin:3px 0 14px}
+.os-welcome-tip p{margin:0;font-size:.83rem;line-height:1.4}
+.os-welcome-buttons{display:flex;flex-direction:column;gap:7px}
+.os-welcome-buttons .os-button{width:100%;min-height:30px;padding:5px 6px;font-size:.73rem;line-height:1.25;border-radius:0;border:2px solid;border-color:#fff #4f6268 #4f6268 #fff;background:var(--os-raised);box-shadow:1px 1px 0 #263b43}
+.os-welcome-buttons .os-welcome-close{margin-top:auto}
+.os-welcome-preference{display:flex;align-items:center;gap:7px;font-size:.75rem;line-height:1.35;margin-top:14px;min-height:26px;width:fit-content;cursor:pointer}
+.os-welcome-preference input{margin:0;width:14px;height:14px;accent-color:var(--os-accent);flex:none}
+.os-onboarding-notice{font-size:.8rem;line-height:1.4;margin:10px 0 0}
+/* Inert owns input/accessibility; opacity hides mounted windows without making
+   their restored focus targets wait for inherited visibility transitions. */
+.os-shell-interactive.is-touring .os-window-layer{opacity:0;pointer-events:none}
+.os-desktop-tour{position:fixed;inset:0;z-index:98;isolation:isolate;touch-action:manipulation}
+.os-tour-shade{position:absolute;inset:0;pointer-events:none}
+.os-tour-dialog.os-window{position:absolute;width:min(350px,calc(100vw - 20px));height:auto;max-height:calc(100dvh - 103px);overflow:auto;border-radius:0}
+.os-tour-dialog .os-titlebar{display:flex;justify-content:space-between;gap:12px;font-size:.7rem}
+.os-tour-body{padding:14px}
+.os-tour-body h2{font-size:1.12rem;line-height:1.25;margin:0 0 8px;letter-spacing:0}
+.os-tour-body p{font-size:.85rem;line-height:1.45;margin:0 0 14px}
+.os-tour-actions{display:flex;flex-wrap:wrap;gap:7px}
+.os-tour-actions .os-button{font-size:.74rem;min-height:33px;padding:7px 10px}
+.os-tour-destination{flex-basis:100%}
+.os-tour-skip{margin-left:auto}
+.os-tour-unanchored{color:var(--os-muted)}
+@media(max-width:600px){
+  .os-welcome-window.os-window{top:calc(50% - 11px);width:calc(100vw - 20px);max-height:calc(100dvh - 124px)}
+  .os-welcome-body{padding:14px}
+  .os-welcome-intro{margin-bottom:12px}
+  .os-welcome-intro h1{font-size:1.35rem}
+  .os-welcome-row{grid-template-columns:minmax(0,1fr);gap:10px}
+  .os-welcome-tip{min-height:128px;padding:14px 12px}
+  .os-welcome-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .os-welcome-buttons .os-button{min-height:44px}
+  .os-welcome-buttons .os-welcome-close{margin-top:0}
+  .os-welcome-preference{min-height:44px;margin-top:8px;font-size:.73rem}
+  .os-welcome-preference input{width:18px;height:18px}
+  .os-tour-dialog.os-window{max-height:calc(100dvh - 128px)}
+  .os-tour-actions .os-button{min-height:44px}
+}
+@media print{.os-desktop-tour,.os-welcome-window.os-window{display:none!important}}

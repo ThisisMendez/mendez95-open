@@ -1,0 +1,10 @@
+/* The terminal owns one scroll area, including long destinations and navigation. */
+.os-safe-mode[role=dialog]{grid-template-rows:auto minmax(0,1fr) auto;padding-top:max(1rem,env(safe-area-inset-top,0px));padding-bottom:max(1rem,env(safe-area-inset-bottom,0px))}
+.os-safe-mode .os-safe-about{padding:.7rem 0;font:inherit;overflow-wrap:anywhere}
+.os-safe-mode .os-safe-about p{white-space:pre-line}
+.os-safe-mode .os-safe-choice label{display:inline-flex;align-items:center;gap:.3rem;flex-wrap:wrap}
+.os-safe-mode .os-safe-navigation{flex-wrap:wrap}
+@media(max-width:767px){
+ .os-safe-mode[role=dialog]{padding:max(.5rem,env(safe-area-inset-top,0px)) max(.5rem,env(safe-area-inset-right,0px)) max(.5rem,env(safe-area-inset-bottom,0px)) max(.5rem,env(safe-area-inset-left,0px))}
+ .os-safe-mode .os-safe-content :is(button,a,input){min-height:44px}
+}

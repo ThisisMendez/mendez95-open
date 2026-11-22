@@ -1,0 +1,17 @@
+import {describe,it,expect} from 'vitest';
+import {visitorDisplay,SNAPSHOT_CUTOFF} from './visitorDisplay';
+const sum=(rows:{count:number}[])=>rows.reduce((n,r)=>n+r.count,0);
+describe('owner snapshot and measured analytics separation',()=>{
+ it('has precisely five approved monthly totals and cumulative milestones at cutoff',()=>{const d=visitorDisplay([],new Date(SNAPSHOT_CUTOFF));expect(d.total).toBe(649);expect(d.monthly).toEqual([{day:'2026-06',count:25},{day:'2026-07',count:32},{day:'2026-08',count:125},{day:'2026-09',count:200},{day:'2026-10',count:267}]);expect(d.snapshot.months.map(m=>m.cumulative)).toEqual([25,57,182,382,649]);});
+ it('starts on owner-confirmed launch day and cannot generate future growth',()=>{expect(visitorDisplay([],new Date('2026-06-17T23:59:59Z')).total).toBe(0);expect(visitorDisplay([],new Date('2026-06-30T23:59:59Z')).total).toBe(25);expect(visitorDisplay([],new Date('2026-11-30T12:00:00Z')).total).toBe(649);});
+ it('is deterministic and reconciles geographic and chronological totals',()=>{const d=visitorDisplay([],new Date(SNAPSHOT_CUTOFF));expect(visitorDisplay([],new Date(SNAPSHOT_CUTOFF))).toEqual(d);expect(sum(d.countries)).toBe(649);expect(d.countries).toHaveLength(7);expect(d.cities).toHaveLength(8);expect(sum(d.cities)+d.unrankedTotal).toBe(649);expect(sum(d.otherCities)).toBe(d.unrankedTotal);expect(sum(d.monthly)).toBe(649);expect(d.countries.every((v,i)=>i===0||d.countries[i-1]!.count>=v.count)).toBe(true);});
+ it('adds only distinct post-cutoff visits without changing Actual or double-counting snapshot history',()=>{const actual=[{dayHash:'old',country:'US',day:'2026-10-28'},{dayHash:'undated',country:'ZZ'},{dayHash:'oldDay',country:'US',day:'2026-10-29'},{dayHash:'new',country:'JP',city:'Tokyo',day:'2026-10-29',recordedAt:'2026-10-29T21:00:00Z'},{dayHash:'new',country:'JP',city:'Tokyo',day:'2026-10-29',recordedAt:'2026-10-29T21:00:00Z'},{dayHash:'tomorrow',country:'CA',day:'2026-10-30'},{dayHash:'future',country:'US',day:'2026-11-02'}];const bytes=JSON.stringify(actual);const d=visitorDisplay(actual,new Date('2026-11-01T12:00:00Z'));expect(d.total).toBe(651);expect(sum(d.monthly)).toBe(651);expect(sum(d.daily)).toBeGreaterThanOrEqual(2);expect(sum(d.countries)).toBe(651);expect(JSON.stringify(actual)).toBe(bytes);expect(JSON.stringify(d)).not.toContain('dayHash');expect(d.monthly.find(m=>m.day==='2026-10')?.count).toBe(269);});
+});
+it('progresses stored illustrative allocations monotonically and reconciles all public geography',async()=>{
+ const {illustrativeVisible}=await import('./visitorDisplay');const entry={day:'2026-11-04',allocation:7,origin:'illustrative' as const};
+ const hours=[0,3,6,12,18,23.99],counts=hours.map(hour=>illustrativeVisible(entry,new Date(Date.parse(entry.day+'T00:00:00Z')+hour*3600000)));
+ expect(counts[0]).toBe(0);expect(counts.at(-1)).toBe(7);expect(counts).toEqual([...counts].sort((a,b)=>a-b));
+ const actual=[{dayHash:'actual-fixture',day:'2026-11-04',country:'ZZ',recordedAt:'2026-11-04T01:00:00Z'}],before=JSON.stringify(actual);
+ const d=visitorDisplay(actual,new Date('2026-11-04T23:59:59Z'),[entry,entry]);
+ expect(d.total).toBe(657);expect(d.today).toBe(8);expect(d.illustrative.total).toBe(7);expect(sum(d.countries)).toBe(d.total);expect(sum(d.monthly)).toBe(d.total);expect(sum([...d.cities,...d.otherCities])).toBe(d.total);expect(d.countries.some(c=>c.code==='ZZ'&&c.count===1)).toBe(true);expect(JSON.stringify(actual)).toBe(before);
+});

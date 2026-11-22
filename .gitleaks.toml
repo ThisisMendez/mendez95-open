@@ -1,0 +1,12 @@
+title = "Mendez95 Open secret scanning"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated SHA-256 inventory; authored only by the export tool"
+paths = ['''(^|/)PUBLIC-EXPORT\.json$''']
+
+[[allowlists]]
+description = "Exact browser storage names, not authentication credentials"
+regexTarget = "secret"
+regexes = ['''^mendez-95-(snip-position-v1|lounge-appearance|tour)$''']
